@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise generator</title>
+    <link rel="stylesheet" href="css/common.css" />
+  </head>
+  <body>
+    <p><a href="index.html">Go back</a></p>
+
+    <form class="form">
+      <label>
+        First delay (ms)
+        <input value="1000" id="firstDeley" type="number" name="delay" required />
+      </label>
+      <label>
+        Delay step (ms)
+        <input value="2000" id="step" type="number" name="step" required />
+      </label>
+      <label>
+        Amount
+        <input value="2" id="amount" type="number" name="amount" required />
+      </label>
+      <button type="button">Create promises</button>
+    </form>
+
+    <script src="js/03-promises.js" type="module"></script>
+  </body>
+</html>
