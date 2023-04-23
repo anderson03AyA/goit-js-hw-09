@@ -1,5 +1,5 @@
 // all modules
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix';
 
 function createPromise(position, delay, amount, i) {
   // iterador para saber cuantas veces
@@ -25,19 +25,13 @@ function createPromise(position, delay, amount, i) {
       createPromise(position, delay, amount, (i += 1))
         .then(({ position, delay }) => {
           console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
-          
-           Notiflix.notify(
-             'success',
-             `✅ Fulfilled promise ${position} in ${delay}ms`
-           );
+
+          Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
         })
         .catch(({ position, delay }) => {
           console.log(`❌ Rejected promise ${position} in ${delay}ms`);
 
-          Notiflix.notify(
-            'warning',
-            `❌ Rejected promise ${position} in ${delay}ms`
-          );
+          Notify.warning(`❌ Rejected promise ${position} in ${delay}ms`);
         });
     }
   });
@@ -52,4 +46,8 @@ submit.addEventListener('click', e => {
   e.preventDefault();
   // el ultimo indice siempre es igual a 0 ya que es el iterador
   createPromise(firstDelay.value, step.value, amount.value, 0);
+  firstDelay.value = 1000;
+  step.value = 2000;
+  amount.value = 2;
+  
 });
