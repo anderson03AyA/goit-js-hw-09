@@ -24,7 +24,7 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 function changeColorBody(random) {
-    color = random;
+    let color = random;
     body.style.display = "inline";
     body.style.background = color;
 }
